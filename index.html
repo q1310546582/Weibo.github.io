@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数据可视化项目</title>
+    <script src="js/flexible.js"></script>
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/initial.css">
+    <link rel="stylesheet" href="./fonts/icomoon.css">
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/echarts.min.js"></script>
+    <script src="./js/flexible.js"></script>
+    <script src="./js/china.js"></script>
+
+</head>
+<style>
+    @media screen and (min-width: 1920px) {
+        html {
+            font-size: 80px !important;
+        }
+    }
+
+    @media screen and (max-width: 1080px) {
+        html {
+            font-size: 42.66px !important;
+        }
+    }
+</style>
+
+<body>
+    <!-- 父容器 -->
+    <div class="viewport">
+        <div class="part ">
+            <!-- 概览模块 -->
+            <div class="panel overview">
+                <div class="inner">
+                    <h3 style="text-align: center;">
+                        <span class="icon-cube" style="color:#68d8fe"></span>
+                        数据探查
+                    </h3>
+                    <ul>
+                        <li>
+                            <h4>121043</h4>
+                            <span>
+                                <i class="icon-dot"></i>
+                                发博总量</span>
+                        </li>
+                        <li>
+                            <h4>4</h4>
+                            <span>
+                                <i class="icon-dot" style="color: blue;"></i>
+                                缺失记录</span>
+                        </li>
+                        <li>
+                            <h4>20029</h4>
+                            <span>
+                                <i class="icon-dot" style="color: green;"></i>
+                                异常记录</span>
+                        </li>
+                        <li>
+                            <h4>2190</h4>
+                            <span>
+                                <i class=" icon-dot" style="color: red;"></i>
+                                不完整记录</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- 监控区域模块 -->
+            <div class="panel monitor">
+                <div class='inner'>
+                    <div class="tab">
+                        <a href="javascript:;" class="active">正常数据</a>
+                        <a href="javascript:;">异常数据</a>
+                    </div>
+                    <div class="content active">
+                        <div class=" header">
+                            <span class="col">用户ID</span>
+                            <span class="col">内容</span>
+                            <span class="col">日期</span>
+                        </div>
+                        <div class="marquee-view">
+                            <div class="marquee">
+                                <div class="row">
+                                    <span class="col">1256799201</span>
+                                    <span class="col">2015下半年，开始了</span>
+                                    <span class="col">2015-07-01</span>
+                                    <span class="icon-dot"></span>
+                                </div>
+                                <div class="row">
+                                    <span class="col">3544793224</span>
+                                    <span class="col">缓缓飘落的枫叶 像思念伤心月亮</span>
+                                    <span class="col">2015-07-01</span>
+                                    <span class="icon-dot"></span>
+                                </div>
+                                <div class="row">
+                                    <span class="col">5081729106 </span>
+                                    <span class="col">和先生和小姐 生日快乐，虽然我们的脚在一起，但是我还是要矫情的发微博。</span>
+                                    <span class="col">2015-07-01</span>
+                                    <span class="icon-dot"></span>
+                                </div>
+                                <div class="row">
+                                    <span class="col">3027625907</span>
+                                    <span class="col">乘坐公交，不要把垃圾放在车上，下车时顺便带走，丢在公交车站附近的垃圾桶内。城市文明，从点滴小</span>
+                                    <span class="col">2015-07-01</span>
+                                    <span class="icon-dot"></span>
+                                </div>
+                                <div class="row">
+                                    <span class="col">5690550735</span>
+                                    <span class="col">今天我丢了钱包，感觉整个人都疯了，心里害怕的要死，不敢告诉妈妈，在朋友的劝说下，我小心翼翼拿</span>
+                                    <span class="col">2015-07-01</span>
+                                    <span class="icon-dot"></span>
+                                </div>
+                                <div class="row">
+                                    <span class="col">5372446332</span>
+                                    <span class="col">跟自己说晚安。鲜花鲜花</span>
+                                    <span class="col">2015-07-01</span>
+                                    <span class="icon-dot"></span>
+                                </div>
+                                <div class="row">
+                                    <span class="col">1735706514</span>
+                                    <span class="col">刚刚在 Instagram 上发布了照片 The Camel Bar</span>
+                                    <span class="col">2015-07-01</span>
+                                    <span class="icon-dot"></span>
+                                </div>
+                                <div class="row">
+                                    <span class="col">2601722681</span>
+                                    <span class="col">经历那么多，感谢自己还相信爱情。</span>
+                                    <span class="col">2015-07-01</span>
+                                    <span class="icon-dot"></span>
+                                </div>
+                                <div class="row">
+                                    <span class="col">2189146612</span>
+                                    <span class="col">光宗三号 好爱哦好爱哦好爱哦</span>
+                                    <span class="col">2015-07-01</span>
+                                    <span class="icon-dot"></span>
+                                </div>
+                                <div class="row">
+                                    <span class="col">2189146612</span>
+                                    <span class="col">2015已悄然过去一半了。回首上半年感觉什么事都没有做时间就这样溜走了，希望在下半年家人一切</span>
+                                    <span class="col">2015-07-01</span>
+                                    <span class="icon-dot"></span>
+                                </div>
+                                <div class="row">
+                                    <span class="col">2603273151</span>
+                                    <span class="col">情节总难忘记，青春不散（2015·6·30） http://t.cn/z8AmBTT</span>
+                                    <span class="col">2015-07-01</span>
+                                    <span class="icon-dot"></span>
+                                </div>
+                                <div class="row">
+                                    <span class="col">2603273151</span>
+                                    <span class="col">我们总是有做不完的工作，吐不完的怨气，减不完的肥，操不完的大爷，骂不完的SB，这就是生活。</span>
+                                    <span class="col">2015-07-01</span>
+                                    <span class="icon-dot"></span>
+                                </div>
+                                <div class="row">
+                                    <span class="col">2603273151</span>
+                                    <span class="col">逆风如解意，容易莫摧残</span>
+                                    <span class="col">2015-07-01</span>
+                                    <span class="icon-dot"></span>
+                                </div>
+                                <div class="row">
+                                    <span class="col">2938028511</span>
+                                    <span class="col">抵达昆明 </span>
+                                    <span class="col">2015-07-01</span>
+                                    <span class="icon-dot"></span>
+                                </div>
+                                <div class="row">
+                                    <span class="col">2799101213</span>
+                                    <span class="col">今天我睡在这里[可爱] </span>
+                                    <span class="col">2015-07-01</span>
+                                    <span class="icon-dot"></span>
+                                </div>
+                                <div class="row">
+                                    <span class="col">20190701</span>
+                                    <span class="col">没有传说中的暴乱，没有电视里的持枪武警，有的只是满大街的拉皮条似得往自己家酒店拉客人的阿姨</span>
+                                    <span class="col">2015-07-01</span>
+                                    <span class="icon-dot"></span>
+                                </div>
+                                <div class="row">
+                                    <span class="col">20190701</span>
+                                    <span class="col">我正在 #亚洲新歌榜# 为 @M鹿M @陶喆 的新歌</span>
+                                    <span class="col">2015-07-01</span>
+                                    <span class="icon-dot"></span>
+                                </div>
+                                <div class="row">
+                                    <span class="col">20190701</span>
+                                    <span class="col">北京市昌平区建材城西路金燕龙写字楼</span>
+                                    <span class="col">2015-07-01</span>
+                                    <span class="icon-dot"></span>
+                                </div>
+                                <div class="row">
+                                    <span class="col">20190701</span>
+                                    <span class="col">舍不得[悲伤</span>
+                                    <span class="col">2015-07-01</span>
+                                    <span class="icon-dot"></span>
+                                </div>
+                                <div class="row">
+                                    <span class="col">20190710</span>
+                                    <span class="col">sober党！宿舍断网，我花了100M流量下载的无损[悲伤]为了哥哥们值了</span>
+                                    <span class="col">2015-07-01</span>
+                                    <span class="icon-dot"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content ">
+                        <div class="header">
+                            <span class="col">用户ID</span>
+                            <span class="col">内容</span>
+                            <span class="col">位置</span>
+                        </div>
+                        <div class="marquee-view">
+                            <div class="marquee">
+                                <div class="row">
+                                    <span class="col">2807992277</span>
+                                    <span class="col">最后一晚，我们在麦巢。。 以后什么时候才有机会再在一起唱走调的歌呢？ http://t.cn...</span>
+                                    <span class="col">Null Null </span>
+                                    <span class="icon-dot"></span>
+                                </div>
+                                <div class="row">
+                                    <span class="col">2625404922</span>
+                                    <span class="col">兜捞地图好多大宝藏，我也抢到一个，你再不去就抢完了！http://t.cn/R2FiAA0</span>
+                                    <span class="col">Null Null </span>
+                                    <span class="icon-dot"></span>
+                                </div>
+                                <div class="row">
+                                    <span class="col">3082493813</span>
+                                    <span class="col">@博物杂志 这是什么品种……？ http://t.cn/RL74AAt</span>
+                                    <span class="col">Null Null </span>
+                                    <span class="icon-dot"></span>
+                                </div>
+                                <div class="row">
+                                    <span class="col">3060056083</span>
+                                    <span class="col">菩提老祖不是那么好惹的。[草泥马]…～ http://t.cn/RLy67QV</span>
+                                    <span class="col">Null Null </span>
+                                    <span class="icon-dot"></span>
+                                </div>
+                                <div class="row">
+                                    <span class="col">1925891995</span>
+                                    <span class="col">有一种孤独是 已经习惯了在某个人的庇护下生活，这个人离开之后，你不得不面对现实，也渐渐学会了</span>
+                                    <span class="col">Null Null </span>
+                                    <span class="icon-dot"></span>
+                                </div>
+                                <div class="row">
+                                    <span class="col">1925891995</span>
+                                    <span class="col">戴月归人。…～ http://t.cn/R2WJLNP</span>
+                                    <span class="col">Null Null </span>
+                                    <span class="icon-dot"></span>
+                                </div>
+                                <div class="row">
+                                    <span class="col">1925891995</span>
+                                    <span class="col">北京市昌平区建西路金燕龙写字楼</span>
+                                    <span class="col">Null Null </span>
+                                    <span class="icon-dot"></span>
+                                </div>
+                                <div class="row">
+                                    <span class="col">1702778531</span>
+                                    <span class="col">60个实例教程，一天两个，30天！！FIGHTING！！！[doge]只有你想不到，没有你做..</span>
+                                    <span class="col">Null Null </span>
+                                    <span class="icon-dot"></span>
+                                </div>
+                                <div class="row">
+                                    <span class="col">3060056083</span>
+                                    <span class="col">搬进新校区的第一天 囧态百出 #166路看成106路也是迷糊到没sei了 恩打车很好玩儿#</span>
+                                    <span class="col">Null Null </span>
+                                    <span class="icon-dot"></span>
+                                </div>
+                                <div class="row">
+                                    <span class="col">2690852432</span>
+                                    <span class="col">我不想把坏的一面藏起来 因为那才最真实 我没有那么多泛泛之交 也没有那么多生死与共 你觉得我</span>
+                                    <span class="col">Null Null </span>
+                                    <span class="icon-dot"></span>
+                                </div>
+                                <div class="row">
+                                    <span class="col">2690852432</span>
+                                    <span class="col">总算有无线了[偷乐][偷乐][偷乐][羞嗒嗒]#最长的旅途[音乐]##小时代4零点引爆##横...</span>
+                                    <span class="col">Null Null </span>
+                                    <span class="icon-dot"></span>
+                                </div>
+                                <div class="row">
+                                    <span class="col">2625329305</span>
+                                    <span class="col">北京市昌平区城西路金燕龙写字楼</span>
+                                    <span class="col">Null Null </span>
+                                    <span class="icon-dot"></span>
+                                </div>
+                                <div class="row">
+                                    <span class="col">2690852432</span>
+                                    <span class="col">北京市昌平区建材城西路金燕龙写字楼</span>
+                                    <span class="col">Null Null </span>
+                                    <span class="icon-dot"></span>
+                                </div>
+                                <div class="row">
+                                    <span class="col">2690852432</span>
+                                    <span class="col">[微风] 偶尔放慢脚步，会发现生活处处有惊喜... http://t.cn/R2WiVlR</span>
+                                    <span class="col">Null Null </span>
+                                    <span class="icon-dot"></span>
+                                </div>
+                                <div class="row">
+                                    <span class="col">2078750612</span>
+                                    <span class="col">五点多钟有人在唱春天里 一直被吵醒到现在 [生病] http://t.cn/RLzPmJy</span>
+                                    <span class="col">Null Null </span>
+                                    <span class="icon-dot"></span>
+                                </div>
+                                <div class="row">
+                                    <span class="col">2078750612</span>
+                                    <span class="col">@博物杂志 这是什么品种……？ http://t.cn/RL74AAt</span>
+                                    <span class="col">Null Null </span>
+                                    <span class="icon-dot"></span>
+                                </div>
+                                <div class="row">
+                                    <span class="col">1638905345</span>
+                                    <span class="col">色即是空 http://t.cn/RL7TS6e</span>
+                                    <span class="col">Null Null </span>
+                                    <span class="icon-dot"></span>
+                                </div>
+                                <div class="row">
+                                    <span class="col">2078750612</span>
+                                    <span class="col">心好痛。#Hello七月# http://t.cn/R2WJRB1</span>
+                                    <span class="col">Null Null </span>
+                                    <span class="icon-dot"></span>
+                                </div>
+                                <div class="row">
+                                    <span class="col">1638905345</span>
+                                    <span class="col">[微风] 偶尔放慢脚步，会发现生活处处有惊喜... http://t.cn/R2WiVlR</span>
+                                    <span class="col">Null Null </span>
+                                    <span class="icon-dot"></span>
+                                </div>
+                                <div class="row">
+                                    <span class="col">1787360827</span>
+                                    <span class="col">期待了太久的地方</span>
+                                    <span class="col">Null Null </span>
+                                    <span class="icon-dot"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- 点位分布统计模块 -->
+            <div class="panel point">
+                <div class='inner'>
+                    <h3>数据质量</h3>
+                    <div class="chart">
+                        <!-- <div class="pie"></div> -->
+                        <div class="pie"></div>
+                        <div class="data">
+                            <div>
+                                <h2>121,043</h2>
+                                <span>
+                                    <i class=" icon-dot" style="color: red;"></i>
+                                    点位总数</span>
+                            </div>
+                            <div>
+                                <h2>418</h2>
+                                <span>
+                                    <i class=" icon-dot" style="color: yellow;"></i>
+                                    本月新增</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="part">
+            <div class="map">
+                <h3 style="text-align: center;">
+                    <span class="icon-cube" style="color:#68d8fe"></span>
+                    城市热点区域挖掘
+                </h3>
+                <div class="chart">
+                    <div class="geo">
+                        <div class='lineTag'></div>
+                        <div class='timeLine'>
+                            <a href="javascript:;">
+                                <div class="current1"></div><span class="current2">week1</span>
+                            </a>
+                            <a href="javascript:;">
+                                <div></div><span>week2</span>
+                            </a>
+                            <a href="javascript:;">
+                                <div></div><span>week3</span>
+                            </a>
+                            <a href="javascript:;">
+                                <div></div><span>week4</span>
+                            </a>
+                            <a href="javascript:;">
+                                <div></div><span>week5</span>
+                            </a>
+                            <a href="javascript:;">
+                                <div></div><span>week6</span>
+                            </a>
+                            <a href="javascript:;">
+                                <div></div><span>week7</span>
+                            </a>
+                            <a href="javascript:;">
+                                <div></div><span>week8</span>
+                            </a>
+                            <a href="javascript:;">
+                                <div></div><span>week9</span>
+                            </a>
+                        </div>
+                        <IFrame src="week1.html" style="width:100%; height: 100%;">
+                        </IFrame>
+                    </div>
+                </div>
+
+            </div>
+            <div class="panel users">
+                <div class='inner'>
+                    <h3>近30日日活用户</h3>
+                    <div class="chart">
+                        <div class="bar"></div>
+                        <div class="data">
+                            <div>
+                                <h2>515,120</h2>
+                                <span>
+                                    <i class=" icon-dot" style="color: red;"></i>
+                                    用户总量</span>
+                            </div>
+                            <div>
+                                <h2>248</h2>
+                                <span>
+                                    <i class=" icon-dot" style="color: yellow;"></i>
+                                    本月新增</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="part">
+            <div class="order panel">
+                <div class="inner">
+                    <h3 style="text-align: center;">
+                        <span class="icon-cube" style="color:#68d8fe"></span>
+                        数据分析
+                    </h3>
+                    <div class="header">
+                        <a href="javascript:;" class='active'>60天</a>
+                        <a href="javascript:;">45天</a>
+                        <a href="javascript:;">15天</a>
+                        <a href="javascript:;">24小时</a>
+                    </div>
+                    <div class="data">
+                        <div>
+                            <h2>121,043</h2>
+                            <span>
+                                <i class=" icon-dot" style="color: red;"></i>
+                                发博总量</span>
+                        </div>
+                        <div>
+                            <h2>8,140</h2>
+                            <span>
+                                <i class=" icon-dot" style="color: yellow;"></i>
+                                活跃用户</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 发博时间统计模块 -->
+            <div class="sale panel">
+                <div class="inner">
+                    <div class="header">
+                        <h3>发博时间统计</h3>
+                        <a href="javascript:;" class='active' data-type="year">月</a>
+                        <a href="javascript:;" data-type="month">周</a>
+                        <a href="javascript:;" data-type="week">日</a>
+                    </div>
+                    <div class="line">
+
+                    </div>
+                </div>
+            </div>
+            <!-- 全国热榜模块制作 -->
+            <div class="top panel">
+                <div class="inner">
+                    <div class="all">
+                        <h3>用户TOP3</h3>
+                        <ul>
+                            <li>
+                                <i class="icon-cup1" style="color: #d93f36;"></i>
+                                1924314744
+                            </li>
+                            <li>
+                                <i class="icon-cup2" style="color: #68d8fe;"></i>
+                                5577341356
+                            </li>
+                            <li>
+                                <i class="icon-cup3" style="color: #4c9bfd;"></i>
+                                5108557879
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="province">
+                        <h3>区域热榜 <i class="date">// 近30日 //</i></h3>
+                        <div class="data">
+                            <ul class="sup">
+                                <!-- <li>
+                      <span>北京</span>
+                      <span>25,179 <s class="icon-up"></s></span>
+                    </li>
+                    <li>
+                      <span>河北</span>
+                      <span>23,252 <s class="icon-down"></s></span>
+                    </li> -->
+                            </ul>
+                            <ul class="sub">
+                                <!-- <li><span></span><span> <s class="icon-up"></s></span></li> -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div
+            style="width: 200px; height: 45px;   background-color:  rgb(0,2,7); left: 35%; top:3.8%;position: absolute;">
+            <div style="z-index: 999; color:rgb(0,235,245);text-align: right;line-height:45px ;font-size: .5rem;">微博大数据
+            </div>
+        </div>
+
+    </div>
+
+
+    </div>
+
+    <script src="./js/index.js"></script>
+    <script>
+
+
+
+
+    </script>
+
+
+    <script>
+
+
+    </script>
+</body>
+
+</html>

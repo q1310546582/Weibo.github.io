@@ -1,0 +1,594 @@
+a{
+    color:#666;
+    text-decoration: none;
+}
+
+a:hover{
+    color: #e33333;
+}
+
+html,body{
+    background: url(../images/bg.jpg) no-repeat;
+    background-position:center top;
+    background-size: cover; 
+}
+
+/* flex布局 */
+/* 父容器viewport */
+.viewport{
+    min-width: 1080px;
+    max-width: 1920px;
+    min-height: 9.75rem;
+    margin: 0 auto;
+    background-size: contain;
+    background:url(../images/logo.png) no-repeat;
+    background-position: center top;
+    display: flex;
+    justify-content: row;
+    padding: 1.1rem .25rem 0;
+
+}
+/* .container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: row;
+    margin: 1.1rem .25rem 0;
+} */
+.viewport .part{
+    flex: 3;
+    
+}
+
+.viewport .part:nth-child(2){
+    flex: 5;
+}
+
+/* 公共面板样式 */
+.panel{
+    border: 15px solid transparent;
+    /*边框图片的宽度默认会和边框宽度一样 */
+    /* border-width: 51px 38px 20px 132px ; */
+    border-width: .6375rem .475rem .25rem 1.65rem; 
+    border-image-source: url(../images/border.png) ;
+    border-image-slice: 51 38 20 132; 
+    position: relative;
+    margin-bottom: .25rem;
+}
+.panel h3{
+    font-size: .25rem;
+}
+.inner{
+    position:absolute;
+    padding: .3rem .45rem;
+    top: -.6375rem;
+    left: -1.65rem;
+    right: -0.475rem;
+    bottom: -1.65rem;
+}
+
+.overview{
+
+    height: 0.6rem;
+}
+.overview .inner{
+    padding-top: 0px;
+}
+
+.overview ul{
+    display: flex;
+    justify-content: space-between;
+}
+.overview ul li{
+    flex: 1;
+    text-align: center;
+}
+
+h4{
+    font-weight: 400;
+}
+.overview ul li h4{
+    font-size: .35rem;
+    color: #fff;
+    margin: 0 0 .1rem .06rem;
+}
+
+.overview ul li span{
+    font-size: .2rem;
+    color: #4c9bfb;
+}
+
+.monitor{
+    height: 4.0rem;
+}
+.monitor .tab{
+    height: 8%;;
+    margin-bottom: .1583rem;
+}
+.monitor .tab a{
+    color:#1950c4;
+}
+.monitor .tab a:nth-child(1){
+    font-size: 0.25rem;
+    padding-right: .25rem;
+    padding-left:.45rem;
+    border-right: 0.025rem solid #00f2f1;
+}
+
+.monitor .tab a:nth-child(2){
+    font-size: 0.25rem;
+    padding: 0 .25rem;
+
+}
+
+
+.monitor  .tab .active{
+    color: #fff;
+}
+.monitor .inner{
+    display: flex;
+    flex-direction: column;
+    padding: 0.3rem 0;
+    height: 100%;
+}
+.monitor .content{
+    height: 90% ;
+    display: none;
+}
+.monitor .inner .active{
+    display:inline-block;
+}
+.monitor .content .header{
+    padding-left:.45rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    line-height: .325rem;
+    display: flex;
+    flex-direction: row;
+}
+
+.monitor .content .header span{
+    color:#68d8fe;
+    font-size: 0.175rem;
+
+}
+
+.monitor .content .header span:nth-child(1){
+    flex: 1;
+}
+.monitor .content .header span:nth-child(2){
+    flex: 2;
+}
+.monitor .content .header span:nth-child(3){
+    flex: 1;
+}
+.monitor .content .marquee-view{
+    height: 100%;
+    overflow: hidden;
+}
+
+.monitor .content .marquee-view .marquee{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    animation: move 15s linear infinite;
+
+}
+@keyframes move {
+    0% {
+    }
+    100% {
+      transform: translateY(-50%);
+  }}
+.monitor .content .marquee-view .marquee .row{
+
+    padding-left:.45rem;
+    line-height: .350rem;
+    font-size: 0.175rem;
+    position: relative;
+    color: #61a8ff;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+.monitor .content .marquee-view .marquee .row:hover{
+
+    background-color: rgba(255, 255, 255, 0.1);
+}
+.monitor .content .marquee-view .marquee .row span:nth-child(1){
+    flex: 1;
+}
+.monitor .content .marquee-view .marquee .row span:nth-child(2){
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: .25rem;
+    flex: 2;
+    overflow: hidden;
+    margin-right: .125rem;
+}
+.monitor .content .marquee-view .marquee .row span:nth-child(3){
+    flex: 1;
+}
+.monitor .content .marquee-view .marquee .row .icon-dot {
+    position: absolute;
+    left: 0.2rem;
+    opacity: 0;
+}
+
+.point{
+    height: 2.5rem; 
+
+}
+
+.point .inner{
+    padding: .3rem 0.45rem 0;
+    height: 110%;
+}
+.point .inner h3{
+    font-size: 0.25rem;
+    color: #fff;
+    font-weight: 400;
+    height: 20%;
+}
+.point .inner .chart{
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-flow: row;
+}
+.point .inner .chart .pie{
+
+    flex:2.5;
+}
+
+.point .inner .chart .data{
+    margin-left: .25rem;
+    flex:1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0.25rem 0.375rem;
+    box-sizing: border-box;
+    background-image: url(../images/rect.png);
+    background-size:cover;
+    color: #fff;
+}
+
+.point .inner .chart .data span{
+    color:rgb(0,205,237);
+    font-size: .175rem;
+}
+h3{
+    font-size:.25rem;
+    color: #fff;
+    font-weight: 400;
+}
+html{
+    overflow: hidden;
+}
+
+.viewport .part:nth-child(2){
+    margin: 1rem 0.25rem 0;
+}
+.map {
+    position: relative;
+    /* margin-top: 1rem; */
+    height: 5.625rem;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    margin-bottom: .275rem;
+}
+
+.map .chart{
+    flex: 1;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.users{
+    position: relative;
+    height: 2.5rem; 
+}
+
+.users .inner{
+    padding: .3rem 0.45rem 0;
+    height: 110%;
+}
+.users .inner h3{
+    font-size: 0.25rem;
+    color: #fff;
+    font-weight: 400;
+    height: 20%;
+}
+.users .inner .chart{
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-flow: row;
+}
+.users .inner .chart .bar{
+    flex:5;
+}
+
+.users .inner .chart .data{
+    margin-left: .25rem;
+    flex:1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0.25rem 0.375rem;
+    box-sizing: border-box;
+    background-image: url(../images/rect.png);
+    background-size:cover;
+    color: #fff;
+}
+
+.users .inner .chart .data span{
+    color:rgb(0,205,237);
+    font-size: .175rem;
+}
+
+
+.order {
+    position: relative;
+    height:  1.2rem;
+}
+.order .inner{
+    padding-top: 0;
+}
+.order .header a{
+
+    height: 0.225rem;
+    line-height: 1;
+    padding: 0 0.225rem;
+    color: #1950c4;
+    font-size: 0.225rem;
+    border-right: 0.025rem solid #00f2f1;
+}
+
+.order .header .active{
+    color: #fff;
+    font-size: 0.25rem;
+}
+
+.order .inner .data {
+    margin-left: .25rem;
+    flex:1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0.1rem 0.375rem 0.25rem;
+    box-sizing: border-box;
+    color: #fff;
+}
+
+.sale{
+    height: 2.5rem;
+    position: relative;
+    
+}
+.sale .inner
+{
+    display: flex;
+    flex-flow: column;
+    height: 110%;
+}
+.sale .header h3{
+    display: inline-block;
+    height: 0.225rem;
+    line-height: 0.225rem;
+    padding-right: 0.225rem;
+    border-right: 0.025rem solid #00f2f1;
+}
+
+.sale .inner .header .active{
+    background-color: #4c9bfd;
+    color: #fff;
+}
+
+.sale .inner .header a{
+    padding: 0.05rem;
+    font-size: 0.2rem;
+    margin: -0.05rem 0 0 0.2625rem;
+    border-radius: 0.0375rem;
+    color: #0bace6;
+}
+.sale .inner .line{
+    flex:1;
+
+}
+
+h2{
+    font-size: .3rem;
+}
+
+.geo{
+    width: 100%;
+    height: 100%;
+}
+
+iframe{
+    border-color: rgb(104,216,254);
+}
+.geo{
+    position: relative;
+}
+.chart .geo .timeLine{
+    position: absolute;
+    height: 4.5rem;
+    display: flex;
+    flex-direction: column;
+    top: .6rem;
+    left: .5rem;
+}
+.chart .geo .timeLine a{
+    flex:1;
+    color:rgb(133,232,234);
+}
+
+.chart .geo .timeLine a:hover{
+    color:rgb(255,255,255);
+}
+
+.chart .geo .timeLine div{
+    display: inline-block;
+    margin-right: .25rem;
+    width: .125rem;
+    height: .125rem;
+    border-radius: 50%;
+    background-color: rgb(255,255,255);
+}
+.lineTag{
+    position: absolute;
+    width: .025rem;
+    top: .6rem;
+    left: .55rem;
+    height:4.5rem;
+    background-color:rgb(133,232,234) ;
+}
+
+.chart .geo .timeLine .current1{
+    position: relative;
+    right: .0313rem;
+    width: .1875rem;
+    height: .1875rem;
+    border-radius: 50%;
+    margin-right: .25rem;
+    display: inline-block;
+    background-color:rgb(133,232,234);
+}
+
+.chart .geo .timeLine .current2{
+    color:rgb(255,255,255);
+}
+
+
+.overview ul li h4 {
+    font-size: .35rem;
+    color: #fff;
+    margin: 0;}
+
+
+.monitor .inner div:nth-child(3) .row span:nth-child(3){
+    color: tomato;
+}
+
+
+/* 全国热榜模块制作 */
+/* 排行榜 */
+.top {
+    height: 3.5rem;
+  }
+  .top .inner {
+    margin-top: .125rem;
+    display: flex;
+    height: 100%;
+
+  }
+  .top .all {
+    display: flex;
+    flex-direction: column;
+    width: 2.1rem;
+    color: #4c9bfd;
+    font-size: 0.175rem;
+    vertical-align: middle;
+  }
+  .top .all ul {
+    padding-left: 0.15rem;
+    margin-top: 0.15rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  .top .all li {
+    overflow: hidden;
+  }
+  .top .all [class^="icon-"] {
+    font-size: 0.45rem;
+    vertical-align: middle;
+    margin-right: 0.15rem;
+  }
+  .top .province {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+  }
+  .top .province i {
+    padding: 0 0.15rem;
+    margin-top: 0.0625rem;
+    float: right;
+    font-style: normal;
+    font-size: 0.175rem;
+    color: #0bace6;
+  }
+  .top .province s {
+    display: inline-block;
+    transform: scale(0.8);
+    text-decoration: none;
+  }
+  .top .province .icon-up {
+    color: #dc3c33;
+  }
+  .top .province .icon-down {
+    color: #36be90;
+  }
+  .top .province .data {
+    flex: 1;
+    display: flex;
+    margin-top: 0.175rem;
+  }
+  .top .province ul {
+    flex: 1;
+    line-height: 1;
+    margin-bottom: 0.175rem;
+  }
+  .top .province ul li {
+    display: flex;
+    justify-content: space-between;
+  }
+  .top .province ul span {
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  .top .province ul.sup {
+    font-size: 0.175rem;
+    /* padding-top: .25rem; */
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+  }
+  .top .province ul.sup li {
+    color: #4995f4;
+    padding: 0.15rem;
+  }
+  .top .province ul.sup li.active {
+    color: #a3c6f2;
+    background-color: rgba(10, 67, 188, 0.2);
+  }
+  .top .province ul.sub {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font-size: 0.15rem;
+    background-color: rgba(10, 67, 188, 0.2);
+  }
+  .top .province ul.sub li {
+    color: #52ffff;
+    padding: 0.125rem 0.175rem;
+  }
+  .clock {
+    position: absolute;
+    top: -0.45rem;
+    right: 0.5rem;
+    font-size: 0.25rem;
+    color: #0bace6;
+  }
+  .clock i {
+    margin-right: 5px;
+    font-size: 0.25rem;
+  }
